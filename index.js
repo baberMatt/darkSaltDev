@@ -6,6 +6,8 @@ const darkSalt = document.getElementById("darkSalt")
 const salt = document.getElementById("salt")
 const dust = document.getElementById("dust")
 
+const totalWidth = screen.width;
+
 const targetRect = target.getBoundingClientRect();
 const targetWidth = Math.floor(targetRect.width);
 const targetHeight = Math.floor(targetRect.height);
@@ -33,9 +35,14 @@ let count = 0;
 let pileCount1 = 0;
 let pileCount2 = 0;
 
+console.log(`totalWidth = ${totalWidth}`)
 console.log(`targetWidth = ${targetWidth} & targetHeight = ${targetHeight}`)
 console.log(`saltWidth = ${saltWidth} & saltHeight = ${saltHeight}`)
 console.log(`dustWidth = ${dustWidth} & dustHeight = ${dustHeight}`)
+
+window.onresize = function(){ location.reload(); }
+
+
 
 for (i = 1; i < totalTarget; i++) {
     countArray.push(i)
@@ -90,12 +97,51 @@ function getSaltPile2X() {
 
 function startMask() {
 
-    setInterval(() => {
-        let quarterLeft = startingCount * .60;
-        if (countArray.length > quarterLeft) {
-            let current = randomIndex();
-            createNewBlip(current)
-            createNewSalt(current)
+    // setInterval(() => {
+    //     let quarterLeft = startingCount * .60;
+    //     if (countArray.length > quarterLeft) {
+    //         let current = randomIndex();
+    //         createNewBlip(current)
+    //         createNewSalt(current)
+    //         for (i = 0; i < 8; i++) {
+    //             buildSaltPile(getSaltPile1X(), pileCount1);
+    //         }
+    //         for (i = 0; i < 8; i++) {
+    //             buildSaltPile(getSaltPile2X(), pileCount2);
+    //         }
+    //         if (pileArray2.length < saltHalf) {
+    //             buildSaltPile(getSaltPile2X(), pileCount2);
+    //             buildSaltPile(getSaltPile2X(), pileCount2);
+    //             buildSaltPile(getSaltPile2X(), pileCount2);
+    //             buildSaltPile(getSaltPile2X(), pileCount2);
+    //         } else {
+    //             buildSaltPile(getSaltPile1X(), pileCount1);
+    //             buildSaltPile(getSaltPile1X(), pileCount1);
+    //             buildSaltPile(getSaltPile1X(), pileCount1);
+    //             buildSaltPile(getSaltPile1X(), pileCount1);
+    //         }
+    //     }
+    //     else {
+    //         darkSalt.style.transition = "opacity .7s"
+    //         darkSalt.style.opacity = "0";
+    //         return
+    //     }
+    // }, 1);
+
+    let blipInt = setInterval(() => {
+        let quarterLeft = startingCount * .6;
+        if (countArray.length < quarterLeft) {
+            
+        }
+        setTimeout(() => {
+            darkSalt.style.transition = "opacity .3s"
+            darkSalt.style.opacity = "0";
+            clearInterval(blipInt)
+        }, 2300);
+        let current = randomIndex();
+        createNewBlip(current)
+        createNewSalt(current)
+        setTimeout(() => {
             for (i = 0; i < 8; i++) {
                 buildSaltPile(getSaltPile1X(), pileCount1);
             }
@@ -113,13 +159,8 @@ function startMask() {
                 buildSaltPile(getSaltPile1X(), pileCount1);
                 buildSaltPile(getSaltPile1X(), pileCount1);
             }
-        }
-        else {
-            darkSalt.style.transition = "opacity .7s"
-            darkSalt.style.opacity = "0";
-            return
-        }
-    }, 1);
+        }, 800);
+    }, 10);
 
     function getX(position) {
         let n = position / 100;
@@ -239,12 +280,9 @@ function buildDustCloud() {
 
         setTimeout(() => {
             clearInterval(addParticles)
-        }, 5000);
+        }, 2000);
     
-    }, 1000);
-
-    
-    
+    }, 750);   
 }
 
 function growCloud(currentCloud, growSize) {
@@ -333,11 +371,11 @@ function toggleFullscreen() {
     }
 }
 
-btn.addEventListener("click", function () {
+darkSalt.addEventListener("click", function () {
     startMask();
     setTimeout(() => {
         buildDustCloud();
-    }, 10);
+    }, 50);
 
 })
 

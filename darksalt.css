@@ -2,15 +2,18 @@
     height: 100vh;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 body {
     background: rgb(208, 196, 134);
     background: linear-gradient(121deg, rgba(208, 196, 134, 1) 0%, rgba(230, 219, 163, 1) 15%, rgba(235, 225, 172, 1) 25%, rgba(235, 225, 172, 1) 90%, rgba(230, 219, 163, 1) 96%, rgba(208, 196, 134, 1) 100%);
     z-index: 0;
-    overflow: hidden;
 }
 
-#stripe {
-    background-color: #4e4825;
+#horStripe {
+    background-color: #8f823c;
     height: 4vh;
     width: 100vw;
     position: absolute;
@@ -24,14 +27,27 @@ body {
 
 #salt {
     position: relative;
-    margin-left: 20%;
-    margin-right: 20%;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    #salt {
+        
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #salt {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }
 
 #start {
-    background-color: #4e4825;
     color: #212529;
-    font-size: .7em;
+    font-size: .7em; 
 }
 
 #pileMask {
@@ -227,22 +243,22 @@ body {
         transform: translate(0%);
     }
     3% {
-        transform: translate(1vw, -1vh);
+        transform: translate(.5vw, -.5vh);
     }
     7% {
-        transform: translate(2vw, 0%);
+        transform: translate(1vw, 0%);
     }
     12% {
-        transform: translate(2vw, 8vh);
+        transform: translate(1vw, 8vh);
     }
     37% {
-        transform: translate(3vw, 20vh);
+        transform: translate(2vw, 20vh);
     }
     67% {
-        transform: translate(4vw, 32vh);
+        transform: translate(3vw, 32vh);
     }
     100% {
-        transform: translate(4vw, 75vh);
+        transform: translate(3vw, 75vh);
     }
 }
 
@@ -251,22 +267,22 @@ body {
         transform: translate(0%);
     }
     3% {
-        transform: translate(-1vw, -1vh);
+        transform: translate(-.5vw, -.5vh);
     }
     7% {
-        transform: translate(-2vw, 0%);
+        transform: translate(-1vw, 0%);
     }
     12% {
-        transform: translate(-2vw, 8vh);
+        transform: translate(-1vw, 8vh);
     }
     37% {
-        transform: translate(-3vw, 20vh);
+        transform: translate(-2vw, 20vh);
     }
     67% {
-        transform: translate(-4vw, 32vh);
+        transform: translate(-3vw, 32vh);
     }
     100% {
-        transform: translate(-4vw, 75vh);
+        transform: translate(-3vw, 75vh);
     }
 }
 
