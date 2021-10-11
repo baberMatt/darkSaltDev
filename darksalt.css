@@ -1,9 +1,10 @@
 .height {
-    height: 100vh;
+    height: 100%;
 }
 
 html, body {
     overflow: hidden;
+    height: 100%;
 }
 
 body {
@@ -36,9 +37,9 @@ body {
         margin-right: 5%;
     }
 
-    .height {
-        height: calc(100vh - 40px) !important;
-    }
+    /* .height {
+        height: calc(100vh - 50px) !important;
+    } */
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1199px) {
