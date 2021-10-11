@@ -1,5 +1,5 @@
 .height {
-    height: calc(100vh - 300px);
+    height: 100vh;
 }
 
 html, body {
