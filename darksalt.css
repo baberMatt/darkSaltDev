@@ -14,12 +14,15 @@ body {
 }
 
 #horStripe {
-    background-color: #8f823c;
+    background: rgb(73, 65, 25);
+    background: linear-gradient(290deg, rgba(128,115,53,1) 0%, rgba(143, 130, 60, 1) 15%, rgba(143, 130, 60, 1) 50%, rgba(143, 130, 60, 1) 85%, rgba(128,115,53,1) 100%);
     height: 4vh;
     width: 100vw;
     position: absolute;
     z-index: 4;
     top: 62vh;
+    -webkit-box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.8); 
+    box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.8);
 }
 
 #target {
@@ -28,48 +31,47 @@ body {
 
 #salt {
     position: relative;
-    
 }
 
 @media only screen and (max-width: 600px) {
-    #salt {   
+    #salt {
         margin-left: 5%;
         margin-right: 5%;
     }
-
+    body {
+        background: rgb(208, 196, 134);
+        background: linear-gradient(121deg, rgba(208, 196, 134, 1) 0%, rgba(230, 219, 163, 1) 15%, rgba(235, 225, 172, 1) 25%, rgba(235, 225, 172, 1) 100%);
+    }
     /* .height {
         height: calc(100vh - 50px) !important;
     } */
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1199px) {
+@media only screen and (min-width: 601px) and (max-width: 1399px) {
     #salt {
         margin-left: 0%;
         margin-right: 0%;
     }
-
     #comingSoon {
         font-size: 1.7em !important;
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1400px) {
     #salt {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 
-#start {
-    color: #212529;
-    font-size: .7em; 
+.darkSaltShadow {
+    text-shadow: 2px 2px 7px rgba(33, 37, 41, 0.75);
 }
 
 #pileMask {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 89% 100%, 83% 65%, 81% 58%, 76% 57%, 72% 37%, 67% 31%, 58% 29%, 52% 39%, 50% 53%, 49% 52%, 48% 46%, 47% 38%, 37% 31%, 30% 32%, 24% 37%, 18% 34%, 16% 37%, 13% 63%, 10% 100%, 0% 100%);
     width: 105%;
     height: 152%;
-    width: 105%;
     position: relative;
     z-index: 2;
     top: -112%;
@@ -100,6 +102,8 @@ body {
     height: 6px;
     width: 6px;
     position: absolute;
+    -webkit-box-shadow: 5px 5px 40px 35px rgba(0,0,0,0.7); 
+    box-shadow: 5px 5px 40px 35px rgba(0,0,0,0.7);
     /* animation: salt1 1s ease-in forwards; */
 }
 
@@ -148,10 +152,10 @@ body {
     z-index: 4;
     /* bottom: 0%;
     left: 0%; */
-    transform: scale( .1 );
+    transform: scale( .1);
     transition: all 4s ease-in-out;
-    background: rgb(65,65,65);
-    background: radial-gradient(circle, rgba(65,65,65,0.7) 0%, rgba(65,65,65,0.5) 8%, rgba(65,65,65,0.3) 16%, rgba(65,65,65,0) 40%, rgba(65,65,65,0) 100%);    
+    background: rgb(65, 65, 65);
+    background: radial-gradient(circle, rgba(65, 65, 65, 0.7) 0%, rgba(65, 65, 65, 0.5) 8%, rgba(65, 65, 65, 0.3) 16%, rgba(65, 65, 65, 0) 40%, rgba(65, 65, 65, 0) 100%);
 }
 
 /* #cloud3 {
@@ -321,10 +325,10 @@ body {
         transform: translate(-1vw, -2vh);
     }
     12% {
-        transform: translate(-3vw,-4vh);
+        transform: translate(-3vw, -4vh);
     }
     37% {
-        transform: translate(-5vw,-6vh);
+        transform: translate(-5vw, -6vh);
     }
     67% {
         transform: translate(-7vw, -5vh);
@@ -345,10 +349,10 @@ body {
         transform: translate(-1vw, -2vh);
     }
     12% {
-        transform: translate(-2vw,-4vh);
+        transform: translate(-2vw, -4vh);
     }
     37% {
-        transform: translate(-2vw,-6vh);
+        transform: translate(-2vw, -6vh);
     }
     67% {
         transform: translate(-3vw, -5vh);
@@ -369,10 +373,10 @@ body {
         transform: translate(1vw, -2vh);
     }
     12% {
-        transform: translate(3vw,-4vh);
+        transform: translate(3vw, -4vh);
     }
     37% {
-        transform: translate(5vw,-6vh);
+        transform: translate(5vw, -6vh);
     }
     67% {
         transform: translate(7vw, -5vh);

@@ -6,7 +6,8 @@ const darkSalt = document.getElementById("darkSalt")
 const salt = document.getElementById("salt")
 const dust = document.getElementById("dust")
 
-const totalWidth = screen.width;
+const totalWidth = window.innerWidth;
+let buildSize = 2300;
 
 const targetRect = target.getBoundingClientRect();
 const targetWidth = Math.floor(targetRect.width);
@@ -42,6 +43,13 @@ console.log(`dustWidth = ${dustWidth} & dustHeight = ${dustHeight}`)
 
 window.onresize = function(){ location.reload(); }
 
+if (totalWidth > 1550) {
+    buildSize = 4400;
+}
+
+if (totalWidth < 390) {
+    buildSize = 2100;
+}
 
 
 for (i = 1; i < totalTarget; i++) {
@@ -97,6 +105,8 @@ function getSaltPile2X() {
 
 function startMask() {
 
+    darkSalt.classList.remove("darkSaltShadow")
+
     // setInterval(() => {
     //     let quarterLeft = startingCount * .60;
     //     if (countArray.length > quarterLeft) {
@@ -129,15 +139,11 @@ function startMask() {
     // }, 1);
 
     let blipInt = setInterval(() => {
-        let quarterLeft = startingCount * .6;
-        if (countArray.length < quarterLeft) {
-            
-        }
         setTimeout(() => {
             darkSalt.style.transition = "opacity .3s"
             darkSalt.style.opacity = "0";
             clearInterval(blipInt)
-        }, 2300);
+        }, buildSize);
         let current = randomIndex();
         createNewBlip(current)
         createNewSalt(current)
